@@ -1,0 +1,109 @@
+html {
+  font-family: sans-serif;
+  background-color: #073b4c !important;
+}
+
+.supTable {
+  text-align: center;
+  color: #fbfbfb;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  background-color: rgb(54, 54, 54);
+  margin-bottom: 0px;
+  column-gap: 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 1px solid #ffd166;
+  font-size: 18px;
+}
+
+.slot {
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+}
+
+.mesaGrid {
+  color: #fbfbfb;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  background-color: #118ab2;
+  margin-bottom: 0px;
+  column-gap: 0px;
+  padding: 0px;
+  border: 1px solid #ffd166;
+}
+
+.mesatitle {
+  padding-top: 25px;
+}
+
+.mesatitle h1 {
+  font-size: 54px;
+  width: 70%;
+  padding-bottom: 10px;
+  margin: 0 auto;
+  border-bottom: 2px solid #073b4c;
+}
+
+.timer {
+  font-size: 64px;
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.active {
+  text-align: center;
+  padding: 20px;
+  padding-top: 45px;
+  color: #073b4c;
+  font-size: 24px;
+  font-weight: 300;
+}
+
+.actualPrice {
+  text-align: center;
+  padding: 20px;
+  font-size: 44px;
+  font-weight: 600;
+  padding-top: 30px;
+}
+
+button {
+  background: #efffc8;
+  margin: 5px !important;
+  border: none;
+  padding: 10px;
+  font-size: 18px;
+}
+
+.mesatitle {
+  border-right: 1px solid;
+  text-align: center;
+}
+
+.botones {
+  text-align: center;
+  padding-top: 30px;
+}
+
+.modalTitle h1 {
+  font-size: 24px !important;
+  margin-top: 20px;
+}
+
+.cobroGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding: 0;
+}
+
+.slots {
+  border: 1px solid black;
+  margin-top: 0px;
+  padding: 10px;
+}
+
+.payment {
+  text-align: right;
+}
