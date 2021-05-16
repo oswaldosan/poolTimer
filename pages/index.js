@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import Crono from "../components/crono";
+import Crono from "../components/Crono";
 import Loader from "react-loader-spinner";
 
 export default function Home() {
