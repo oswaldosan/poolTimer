@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import LastModal from "./Modal";
 import { useStopwatch } from "react-timer-hook";
+import axios from "axios";
 
 function MyStopwatch({ mesa, price }) {
   const [lastPrice, setPrice] = useState(0);
@@ -15,7 +16,14 @@ function MyStopwatch({ mesa, price }) {
     setModalShow(true);
   }
 
-  function cobrar() {
+  async function cobrar() {
+    /*ACCEPT FUNCTION ON MODAL*/
+    const data = {
+      mesa: mesa,
+      venta: Math.round(totalprice),
+    };
+    const saved = axios.post("/api/savesell", data);
+    console.log(saved);
     setModalShow(false);
     reset("", false);
   }

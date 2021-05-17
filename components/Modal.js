@@ -40,19 +40,19 @@ function LastModal(props) {
         <Modal.Body>
           <div className="cobroGrid">
             <div className="slots"> Numero de Mesa </div>
-            <div className="slots"> Cantitdad de Minutos </div>
+            <div className="slots"> Cantidad de Tiempo en Minutos </div>
             <div className="slots"> Precio por Hora </div>
             <div className="slots"> Total </div>
 
             <div className="slots"> {mesa} </div>
             <div className="slots"> {totalMinutos} </div>
             <div className="slots"> {porHora} </div>
-            <div className="slots"> ${totalCobrar.toFixed(2)} </div>
+            <div className="slots"> ${Math.round(totalCobrar)} </div>
           </div>
           <br />
           <div className="payment">
             <span>Total a Pagar </span>
-            <input type="text" value={totalCobrar.toFixed(2)}></input> <br />
+            <input type="text" value={Math.round(totalCobrar)}></input> <br />
             <span>Con Cuanto paga ? </span>
             <input type="text" onChange={handleChange}></input>
             <br />

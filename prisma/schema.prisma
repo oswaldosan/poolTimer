@@ -1,0 +1,33 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:../database/poolinfo.db"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+
+model mesasDisponibles {
+  id        Int      @id @default(autoincrement())
+  nombre    String 
+  precioHora    Int
+}
+
+model ventaProductos {
+  id        Int      @id @default(autoincrement())
+  producto  String  
+  precio    Float
+  fecha    DateTime @default(now())
+}
+
+
+model ventaMesas {
+  id        Int      @id @default(autoincrement())
+  mesa     String   
+  fecha    DateTime @default(now())
+  venta    Float
+}
