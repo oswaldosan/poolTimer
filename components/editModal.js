@@ -9,10 +9,12 @@ function EditModal(props) {
 
   function onSubmit(data) {
     const { nombre, precio } = data;
-    props.accept(nombre, precio);
+    const id = props.id;
+    props.accept(id, nombre, precio);
+    console.log(data);
   }
 
-  console.log(props.id, props.nombre);
+  console.log(props.id, props.nombre, props.precio);
   return (
     <>
       <Modal
@@ -36,6 +38,7 @@ function EditModal(props) {
               <input
                 type="text"
                 name="nombre"
+                defaultValue={props.nombre}
                 placeholder={props.nombre}
                 {...register("nombre")}
               ></input>{" "}
@@ -45,6 +48,7 @@ function EditModal(props) {
               <input
                 type="text"
                 name="precio"
+                defaultValue={props.precio}
                 {...register("precio")}
                 placeholder={props.precio}
               ></input>
@@ -55,7 +59,11 @@ function EditModal(props) {
             <Button onClick={props.onHide} className="modalbutton">
               Cerrar
             </Button>
-            <input type="submit" value="Crear Mesa" className="createBtn" />
+            <input
+              type="submit"
+              value="Guardar Cambios"
+              className="createBtn"
+            />
           </Modal.Footer>
         </form>
       </Modal>

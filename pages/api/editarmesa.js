@@ -13,15 +13,15 @@ async function handler(req, res) {
     precioHora: precioHora,
   };
 
-  console.log(id);
+  const finalId = parseInt(id);
 
   const updateUser = await prisma.mesasDisponibles.update({
     where: {
-      id: id,
+      id: finalId,
     },
     data: newData,
   });
-  res.json(deleteUser);
+  res.json(updateUser);
 }
 
 export default handler;

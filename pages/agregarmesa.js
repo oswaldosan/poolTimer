@@ -11,7 +11,7 @@ export default function Home({ data }) {
   const [mesas, setMesas] = useState([]);
   const [isLoading, setLoading] = useState(false);
   const [modalShow, setShow] = useState(false);
-  const [editShow, setEditmodal] = useState(false);
+  const [editShow, setEditmodal] = useState(null);
 
   async function crearMesa(nombre, precio) {
     const theprice = parseInt(precio);
@@ -54,16 +54,22 @@ export default function Home({ data }) {
     }
   }
 
-  async function editar(nombre, precio, id) {
+  async function editar(id, nombre, precio) {
     const theprice = parseInt(precio);
     const data = {
       id: id,
       nombre: nombre,
       precioHora: theprice,
     };
-    const editarMesa = await axios.post("/api/eliminarmesa", data);
+    console.log(data);
+    const editarMesa = await axios.post("/api/editarmesa", data);
     setEditmodal(false);
     setLoading(true);
+  }
+
+  function openeditmodal(id) {
+    console.log("hola");
+    setEditmodal(id);
   }
 
   return (
@@ -92,9 +98,7 @@ export default function Home({ data }) {
                     <h4>Precio de la mesa: {mesa.precioHora}</h4>
                     <button
                       className="btn btn-primary"
-                      onClick={() => {
-                        setEditmodal.bind(true);
-                      }}
+                      onClick={() => openeditmodal(mesa.id)}
                     >
                       Editar
                     </button>
@@ -106,8 +110,8 @@ export default function Home({ data }) {
                     </button>
 
                     <EditModal
-                      onHide={() => setEditmodal(false)}
-                      show={editShow}
+                      onHide={() => setEditmodal(null)}
+                      show={editShow === mesa.id ? true : false}
                       accept={editar}
                       id={mesa.id}
                       nombre={mesa.nombre}
