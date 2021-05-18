@@ -3,16 +3,16 @@ import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import { useForm } from "react-hook-form";
 
-function AddModal(props) {
+function EditModal(props) {
   const [mesadata, setData] = useState([]);
   const { register, handleSubmit } = useForm();
 
   function onSubmit(data) {
     const { nombre, precio } = data;
-
     props.accept(nombre, precio);
   }
 
+  console.log(props.id, props.nombre);
   return (
     <>
       <Modal
@@ -27,7 +27,7 @@ function AddModal(props) {
               id="contained-modal-title-vcenter"
               className="modalTitle"
             >
-              <h1>Agregar Nueva Mesa</h1>
+              <h1>Editar Mesa</h1>
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
@@ -36,12 +36,18 @@ function AddModal(props) {
               <input
                 type="text"
                 name="nombre"
+                placeholder={props.nombre}
                 {...register("nombre")}
               ></input>{" "}
               <br />
               <br />
               <label>Precio por hora de la mesa</label> <br />
-              <input type="text" name="precio" {...register("precio")}></input>
+              <input
+                type="text"
+                name="precio"
+                {...register("precio")}
+                placeholder={props.precio}
+              ></input>
             </div>
             <br />
           </Modal.Body>
@@ -57,4 +63,4 @@ function AddModal(props) {
   );
 }
 
-export default AddModal;
+export default EditModal;

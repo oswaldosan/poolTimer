@@ -167,4 +167,17 @@ button {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   column-gap: 30px;
   padding: 20px;
+  row-gap: 30px;
+}
+
+.addForm {
+  text-align: center;
+  font-size: 20px;
+}
+
+.addForm input {
+  text-align: center;
+  background-color: #efffc8;
+  width: 50%;
+  font-size: 20px;
 }
