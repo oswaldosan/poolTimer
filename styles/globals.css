@@ -158,4 +158,13 @@ button {
   background: #efffc8;
   padding: 20px;
   border-radius: 4px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.editMesasGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 30px;
+  padding: 20px;
 }

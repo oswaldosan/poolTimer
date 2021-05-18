@@ -56,14 +56,18 @@ export default function Home({ data }) {
               onHide={() => setShow(false)}
               accept={crearMesa}
             ></AddModal>
-
-            {mesas.map((mesa, i) => {
-              return (
-                <div className="mesaCard">
-                  <h1 key={i}>{mesa.nombre}</h1>
-                </div>
-              );
-            })}
+            <div className="editMesasGrid">
+              {mesas.map((mesa, i) => {
+                return (
+                  <div className="mesaCard" key={i}>
+                    <h2>Numero: {mesa.nombre}</h2>
+                    <h4>Precio de la mesa: {mesa.precioHora}</h4>
+                    <button className="btn btn-primary">Editar</button>
+                    <button className="btn btn-danger">Editar</button>
+                  </div>
+                );
+              })}
+            </div>
           </div>
           <div className="footer">
             <Link href="/">Timer</Link>
