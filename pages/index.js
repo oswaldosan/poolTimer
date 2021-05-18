@@ -12,8 +12,6 @@ export default function Home({ data }) {
   const [mesas, setMesas] = useState(data);
   const [isLoading, setLoading] = useState(false);
 
-  console.log(data);
-
   return (
     <>
       {isLoading ? (
@@ -52,6 +50,7 @@ export default function Home({ data }) {
       )}
       <div className="footer">
         <Link href="/agregarmesa">Agregar o Editar Mesas</Link>
+        <Link href="/totalventas">Ver Total de Ventas</Link>
       </div>
     </>
   );

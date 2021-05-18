@@ -22,7 +22,6 @@ export default function Home({ data }) {
     };
 
     const saveMesa = await axios.post("/api/crearmesa", data);
-    console.log(saveMesa);
     setShow(false);
     setLoading(true);
     setLoading(false);
@@ -41,7 +40,6 @@ export default function Home({ data }) {
 
   async function eliminar(id) {
     const alerta = confirm("Seguro que quieres elminar esta mesa ?");
-    console.log(alerta);
 
     if (!alerta) {
       return alerta;
@@ -61,14 +59,12 @@ export default function Home({ data }) {
       nombre: nombre,
       precioHora: theprice,
     };
-    console.log(data);
     const editarMesa = await axios.post("/api/editarmesa", data);
     setEditmodal(false);
     setLoading(true);
   }
 
   function openeditmodal(id) {
-    console.log("hola");
     setEditmodal(id);
   }
 
@@ -124,6 +120,7 @@ export default function Home({ data }) {
           </div>
           <div className="footer">
             <Link href="/">Timer</Link>
+            <Link href="/totalventas">Ver Total de Ventas</Link>
           </div>
         </div>
       )}

@@ -29,6 +29,9 @@ html {
 }
 .footer a {
   color: whitesmoke;
+  margin-right: 30px;
+  border: 2px solid gray;
+  padding: 10px;
 }
 
 .createBtn {
@@ -180,4 +183,19 @@ button {
   background-color: #efffc8;
   width: 50%;
   font-size: 20px;
+}
+
+.ventaSlot {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.topBar {
+  background: black;
+  color: whitesmoke;
+  padding: 10px;
+}
+
+.ventasTotales {
+  padding: 7px;
 }
