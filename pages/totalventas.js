@@ -30,7 +30,8 @@ export default function Ventas() {
       allventas.push(ventas[i].venta);
     }
     const sumatotal = allventas.reduce((a, b) => a + b, 0);
-    return sumatotal;
+
+    return sumatotal.toFixed(2);
   }
 
   totalDelaVenta();
