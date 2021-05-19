@@ -197,5 +197,44 @@ button {
 }
 
 .ventasTotales {
+  position: relative;
   padding: 7px;
+}
+
+.btnfullscreen {
+  position: absolute;
+  top: 70px;
+  right: 200px;
+  border-radius: 4px;
+  padding: 15px;
+}
+
+.eliminarventabtn {
+  position: absolute;
+  top: 0px;
+  right: 20px;
+  background: red;
+  color: whitesmoke;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 750px) {
+  .ventasTotales {
+    position: relative;
+    padding: 4px;
+  }
+  h4 {
+    font-size: 0.9rem !important;
+  }
+  .ventaSlot {
+    border: 1px solid;
+  }
+  .ventasTotales h3 {
+    font-size: 20px;
+  }
+  .eliminarventabtn {
+    top: -2px;
+    right: 0px;
+    padding: 5px;
+  }
 }

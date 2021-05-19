@@ -47,12 +47,12 @@ function LastModal(props) {
             <div className="slots"> {mesa} </div>
             <div className="slots"> {totalMinutos} </div>
             <div className="slots"> {porHora} </div>
-            <div className="slots"> ${Math.round(totalCobrar)} </div>
+            <div className="slots"> ${totalCobrar.toFixed(2)} </div>
           </div>
           <br />
           <div className="payment">
             <span>Total a Pagar </span>
-            <input type="text" value={Math.round(totalCobrar)}></input> <br />
+            <input type="text" value={totalCobrar.toFixed(2)}></input> <br />
             <span>Con Cuanto paga ? </span>
             <input type="text" onChange={handleChange}></input>
             <br />

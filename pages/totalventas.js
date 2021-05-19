@@ -13,7 +13,7 @@ export default function Ventas() {
     const sells = await axios.get("/api/obtenerventa");
     setVenta(sells.data);
     setLoading(false);
-  }, []);
+  }, [isLoading]);
 
   function parseDates(fecha) {
     const formatted = DateTime.fromISO(fecha)
@@ -35,6 +35,27 @@ export default function Ventas() {
 
   totalDelaVenta();
 
+  async function eliminarventas() {
+    const sure = confirm(
+      "Seguro que desea Reiniciar la venta?, esto borrara todos los datos existentes"
+    );
+
+    if (sure) {
+      const userpass = prompt("Contraseña para borrar?");
+      if (userpass === "Houseb2021") {
+        const data = {
+          messange: "delete",
+        };
+        const deleteVenta = await axios.post("/api/eliminarventa", data);
+        setLoading(true);
+      } else {
+        const sure = alert("Contraseña Incorrecta");
+      }
+    } else {
+      console.log("ok no");
+    }
+  }
+
   return (
     <>
       {isLoading ? (
@@ -48,13 +69,19 @@ export default function Ventas() {
       ) : (
         <div className="App">
           <div className="header">
-            <img src="/housebilliards.png" width="450px"></img>
+            <img src="/housebilliards.png" width="40%"></img>
           </div>
           <div className="totalventasGrid">
             <div className="ventasTotales">
               <h3>
                 <strong>Ventas Totales: </strong>${totalDelaVenta()}
               </h3>
+              <button
+                className="danger eliminarventabtn"
+                onClick={eliminarventas}
+              >
+                Reiniciar Venta
+              </button>
             </div>
             <div className="ventaSlot topBar">
               <div>

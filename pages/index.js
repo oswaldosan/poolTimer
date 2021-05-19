@@ -25,7 +25,7 @@ export default function Home({ data }) {
       ) : (
         <div className="App">
           <div className="header">
-            <img src="/housebilliards.png" width="450px"></img>
+            <img src="/housebilliards.png" width="40%"></img>
           </div>
           <div className="supTable">
             <div className="slot">Numero de Mesa</div>
